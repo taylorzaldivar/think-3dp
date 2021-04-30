@@ -3,7 +3,7 @@ import { img } from "../utils/imageHelpers";
 
 export default function ThreePanelHero({ blogs }) {
   return (
-    <div className="md:flex bumper mb-12">
+    <div className="md:flex max-w-screen-xl m-auto md:px-4 mb-12">
       <Link href={`/${blogs[0].fields.slug}`}>
         <a
           className="block md:mb-0 mb-2 relative md:w-3/5 bg-cover bg-center md:border-r-4 border-white"

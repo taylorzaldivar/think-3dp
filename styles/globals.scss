@@ -1,4 +1,4 @@
-// @import "fonts/_index";
+@import "fonts/_index";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +6,9 @@
 @layer components {
   .bumper {
     @apply max-w-screen-xl m-auto px-4;
+  }
+  .link {
+    @apply hover:text-lime;
   }
   .text-bumper {
     @apply max-w-screen-md m-auto px-4;
@@ -17,7 +20,7 @@
     }
   }
   .blog {
-    @apply text-lg;
+    @apply text-xl;
     p,
     img {
       @apply mb-4;
@@ -27,11 +30,22 @@
     h3,
     h4,
     h5 {
-      @apply mt-4;
-      @apply mb-2;
+      @apply mt-10 mb-2;
     }
     h2 {
-      @apply text-3xl font-heading font-bold;
+      @apply text-3xl font-heading font-medium;
+    }
+    h3 {
+      @apply text-2xl font-heading font-medium;
+    }
+    figure {
+      @apply my-4;
+      img {
+        @apply mb-1;
+      }
+      figcaption {
+        @apply text-sm text-gray-600 uppercase text-right;
+      }
     }
   }
   .mobile-nav__toggle-btn {

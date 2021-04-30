@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NewsLetter from "./NewsLetter";
 import categories from "../data.preval";
+import SocialIcons from "../components/SocialIcons";
 
 const socials = [
   {
@@ -16,12 +17,22 @@ const socials = [
     url: "https://instagram.com/think3dp",
   },
 ];
+const pages = [
+  {
+    name: "About",
+    url: "/about",
+  },
+  {
+    name: "Contact",
+    url: "/contact",
+  },
+];
 export default function Footer() {
   return (
     <div>
       <NewsLetter />
-      <div className="flex bumper py-10 justify-between">
-        <div className="">
+      <div className="md:flex bumper py-10 justify-between">
+        <div className="mb-8 md:mb-0">
           <Link href="/">
             <a className="block mb-2">
               <img
@@ -31,17 +42,24 @@ export default function Footer() {
               />
             </a>
           </Link>
-          <a href="mailto:contact@think3dp.com" className="font-bold">
+          <a
+            href="mailto:contact@think3dp.com"
+            className="block font-medium mb-4"
+          >
             contact@think3dp.com
           </a>
+          <SocialIcons />
         </div>
         <div className="flex text-lg">
           <div className="mr-20">
-            <div className="font-bold">Pages</div>
+            <div className="font-bold">Categories</div>
             {categories.map((category, index) => {
               return (
                 <div key={index}>
-                  <Link key={index} href={`/${category.fields.slug}`}>
+                  <Link
+                    key={index}
+                    href={`/categories/${category.fields.slug}`}
+                  >
                     <a>{category.fields.name}</a>
                   </Link>
                 </div>
@@ -49,13 +67,13 @@ export default function Footer() {
             })}
           </div>
           <div>
-            <div className="font-bold">Social</div>
-            {socials.map((social, index) => {
+            <div className="font-bold">Pages</div>
+            {pages.map((page, index) => {
               return (
                 <div key={index}>
-                  <a href={social.url} target="_blank">
-                    {social.name}
-                  </a>
+                  <Link href={page.url}>
+                    <a>{page.name}</a>
+                  </Link>
                 </div>
               );
             })}

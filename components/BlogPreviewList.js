@@ -2,15 +2,17 @@ import BlogPreview from "./BlogPreview";
 
 export default function BlogPreviewList({ blogs }) {
   return (
-    <div>
-      {blogs.map((blog) => {
+    <div className="py-10 md:py-20">
+      {blogs.map((blog, index) => {
         return (
           <BlogPreview
-            title={blog.title}
-            author={blog.author}
-            category={blog.category}
-            image={blog.image}
-            link={blog.link}
+            key={index}
+            title={blog.fields.title}
+            author={blog.fields.author.fields.name}
+            date={blog.datePublished}
+            image={blog.fields.coverImage}
+            category={blog.fields.category}
+            link={blog.fields?.slug}
           />
         );
       })}

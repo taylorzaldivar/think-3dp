@@ -1,23 +1,50 @@
 import Link from "next/link";
 import { useState } from "react";
 import categories from "../data.preval";
+import SocialIcons from "./SocialIcons";
 
+const pages = [
+  {
+    name: "About",
+    url: "/about",
+  },
+  {
+    name: "Contact",
+    url: "/contact",
+  },
+];
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div id="head" className="w-full fixed z-40">
-      <div className="bg-white relative bumper">
-        <div className="h-20 flex justify-between md:justify-center items-center">
-          <Link href="/">
-            <a className="inline-block">
-              <img
-                className="h-8 sm:h-10 md:h-16 "
-                src="/images/logo.png"
-                alt="Think3DP logo"
-              />
-            </a>
-          </Link>
+      <div className="bg-white relative">
+        <div className="bumper h-20 flex justify-between md:justify-center items-center">
+          <div className="w-full flex justify-between">
+            <div className="hidden md:flex items-center w-1/3">
+              <SocialIcons />
+            </div>
+            <Link href="/">
+              <a className="inline-block">
+                <img
+                  className="h-6 sm:h-10 md:h-10 "
+                  src="/images/logo.png"
+                  alt="Think3DP logo"
+                />
+              </a>
+            </Link>
+            <div className="hidden md:flex items-center justify-end w-1/3">
+              {pages.map((page, index) => {
+                return (
+                  <Link key={index} href={page.url}>
+                    <a className="hover:text-lime font-medium mr-4">
+                      {page.name}
+                    </a>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
           <button
             mobile-nav-toggle=""
             onClick={() => setIsMenuOpen((state) => !state)}
@@ -34,11 +61,11 @@ export default function Header() {
             </div>
           </button>
         </div>
-        <div className="h-10 hidden md:flex justify-center items-center">
+        <div className="h-12 hidden md:flex justify-center items-center border-t border-b">
           {categories.map((menuItem, index) => {
             return (
               <div className="px-3" key={index}>
-                <Link href={`/${menuItem.fields.slug}`}>
+                <Link href={`/category/${menuItem.fields.slug}`}>
                   <a className="hover:text-lime">{menuItem.fields.name}</a>
                 </Link>
               </div>
@@ -55,8 +82,27 @@ export default function Header() {
           {categories.map((menuItem, index) => {
             return (
               <div key={index} className="px-3 text-center text-xl p-2">
-                <Link href={`/${menuItem.fields.slug}`}>
-                  <a className="hover:text-gray-700">{menuItem.fields.name}</a>
+                <Link href={`/category/${menuItem.fields.slug}`}>
+                  <a
+                    onClick={() => setIsMenuOpen(false)}
+                    className="hover:text-lime"
+                  >
+                    {menuItem.fields.name}
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
+          {pages.map((menuItem, index) => {
+            return (
+              <div key={index} className="px-3 text-center text-xl p-2">
+                <Link href={`${menuItem.url}`}>
+                  <a
+                    onClick={() => setIsMenuOpen(false)}
+                    className="hover:text-lime"
+                  >
+                    {menuItem.name}
+                  </a>
                 </Link>
               </div>
             );

@@ -3,8 +3,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      heading: ["Roboto", "arial", "sans-serif"],
-      body: ["Roboto", "arial", "sans-serif"],
+      heading: ["bt", "arial", "sans-serif"],
+      body: ["bt", "arial", "sans-serif"],
     },
     extend: {
       colors: {
