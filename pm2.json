@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "think3dp.com",
+      "script": "npm",
+      "args": "start"
+    }
+  ]
+}
