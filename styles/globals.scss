@@ -38,10 +38,13 @@
     h3 {
       @apply text-2xl font-heading font-medium;
     }
+    img {
+      @apply m-auto;
+    }
     figure {
       @apply my-4;
       img {
-        @apply mb-1;
+        @apply mb-1 m-auto;
       }
       figcaption {
         @apply text-sm text-gray-600 uppercase text-right;
