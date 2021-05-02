@@ -33,33 +33,36 @@ export default function BlogPage({ blog }) {
         }}
       />
       <div className="mb-10"></div>
-      <div className="bumper max-w-screen-lg mb-20">
-        <h1 className="text-3xl md:text-5xl font-medium mb-2">
-          {blog.fields.title}
-        </h1>
-        <div className="mb-4">
-          <p className="">
-            {blog?.fields?.author?.fields?.name} -{" "}
+      <div className="mb-20">
+        <div className="content-header bumper mb-4">
+          <Link href={`/category/${blog.fields.category.fields.slug}`}>
+            <a className="inline-block bg-lime py-2 px-2 text-sm text-white uppercase font-medium leading-none mb-4">
+              {blog.fields.category.fields.name}
+            </a>
+          </Link>
+          <h1 className="text-3xl md:text-5xl font-medium mb-4 md:mb-8">
+            {blog.fields.title}
+          </h1>
+          <p className="mb-8">
+            By {blog?.fields?.author?.fields?.name} |{" "}
             {new Date(blog?.datePublished).toLocaleDateString("en-US", {
               day: "numeric",
               month: "long",
               year: "numeric",
             })}{" "}
-            -{" "}
-            <Link href={`/category/${blog.fields.category.fields.slug}`}>
-              <a className="link">{blog.fields.category.fields.name}</a>
-            </Link>{" "}
           </p>
         </div>
         <img
-          className="block w-full mb-8"
+          className="max-w-screen-2xl m-auto block w-full mb-8"
           src={img(blog.fields.coverImage)}
           alt=""
         />
-        <div
-          className="blog max-w-screen-md m-auto"
-          dangerouslySetInnerHTML={{ __html: blog.fields.content }}
-        ></div>
+        <div className="">
+          <main
+            className="blog bumper"
+            dangerouslySetInnerHTML={{ __html: blog.fields.content }}
+          ></main>
+        </div>
       </div>
     </>
   );
