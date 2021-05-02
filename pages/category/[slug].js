@@ -5,7 +5,7 @@ import { NextSeo } from "next-seo";
 
 export default function CategoryPage({ category, blogs }) {
   return (
-    <div className="">
+    <div className="py-10">
       <NextSeo
         title={`${category.fields.name}`}
         description="Learn about the creators behind Think3DP and our mission to show how 3D printing technology is revolutionizing the world."
@@ -23,6 +23,9 @@ export default function CategoryPage({ category, blogs }) {
           ],
         }}
       />
+      <h1 className="bumper text-gray-500 pb-2 text-xl md:text-2xl">
+        {category.fields.name}
+      </h1>
       <BlogPreviewList blogs={blogs} />
     </div>
   );
