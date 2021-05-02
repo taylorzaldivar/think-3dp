@@ -19,35 +19,50 @@
       @apply mb-10;
     }
   }
+  .content-header {
+    @apply text-left md:text-center m-auto;
+    max-width: 730px;
+  }
   .blog {
     @apply text-xl;
+    max-width: 730px;
+    margin: 0 auto;
+
     p,
+    ul,
+    li,
     img {
-      @apply mb-4;
+      @apply mb-4 text-base md:text-lg;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      @apply mt-10 mb-2;
-    }
+
     h2 {
-      @apply text-3xl font-heading font-medium;
+      @apply text-3xl font-heading font-medium mt-8 mb-2;
     }
     h3 {
-      @apply text-2xl font-heading font-medium;
+      @apply text-2xl font-heading font-medium mt-5 mb-2;
+    }
+    h4 {
+      @apply text-xl font-heading font-medium;
     }
     img {
       @apply m-auto;
     }
     figure {
-      @apply my-4;
+      @apply my-4 border-b border-gray-200;
+      // @lg{
+      //   width: 130%;
+      //   margin-left: -15%;
+      // }
       img {
         @apply mb-1 m-auto;
       }
       figcaption {
         @apply text-sm text-gray-600 uppercase text-right;
+      }
+    }
+    ul {
+      @apply list-disc list-inside;
+      li {
       }
     }
   }
