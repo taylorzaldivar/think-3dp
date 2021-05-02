@@ -23,8 +23,12 @@ export default function Home({ blogs }) {
           ],
         }}
       />
-      {/* <ThreePanelHero blogs={blogs} /> */}
-      <BlogPreviewList blogs={blogs} />
+      <ThreePanelHero blogs={blogs} />
+      <div className="bumper text-gray-500 pb-2 text-xl md:text-2xl">
+        More Articles
+      </div>
+
+      <BlogPreviewList blogs={blogs.slice(3)} />
     </div>
   );
 }
