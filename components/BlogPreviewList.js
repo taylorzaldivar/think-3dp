@@ -2,7 +2,7 @@ import BlogPreview from "./BlogPreview";
 
 export default function BlogPreviewList({ blogs }) {
   return (
-    <div className="py-10 md:py-20">
+    <div className="">
       {blogs.map((blog, index) => {
         return (
           <BlogPreview
