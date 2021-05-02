@@ -50,16 +50,13 @@ export default function Footer() {
           </a>
           <SocialIcons />
         </div>
-        <div className="flex text-lg">
-          <div className="mr-20">
+        <div className="md:flex text-lg">
+          <div className="mr-20 mb-10 md:mb-0">
             <div className="font-bold">Categories</div>
             {categories.map((category, index) => {
               return (
                 <div key={index}>
-                  <Link
-                    key={index}
-                    href={`/categories/${category.fields.slug}`}
-                  >
+                  <Link key={index} href={`/category/${category.fields.slug}`}>
                     <a>{category.fields.name}</a>
                   </Link>
                 </div>

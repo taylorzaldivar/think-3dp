@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <div id="head" className="w-full fixed z-40">
       <div className="bg-white relative">
-        <div className="bumper h-20 flex justify-between md:justify-center items-center">
+        <div className="bumper h-16 md:h-20 flex justify-between md:justify-center items-center">
           <div className="w-full flex justify-between">
             <div className="hidden md:flex items-center w-1/3">
               <SocialIcons />
