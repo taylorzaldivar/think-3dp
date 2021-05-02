@@ -20,7 +20,7 @@ export default function NewsLetterForm() {
     <div>
       {formSubmitted ? (
         <div className="">
-          <p className="font-medium text-2xl">
+          <p className="font-medium text-xl md:text-2xl">
             Thank you for submitting your email.{" "}
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function NewsLetterForm() {
               <div>
                 <button
                   type="submit"
-                  className={`bg-lime hover:bg-lime-dark text-white font-medium rounded-r py-4 px-10`}
+                  className={`bg-lime hover:bg-lime-dark text-white font-medium text-sm md:text-base rounded-r py-4 px-10`}
                   disabled={submitting || !isEmpty(errors)}
                 >
                   {buttonText}

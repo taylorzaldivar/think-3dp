@@ -7,7 +7,7 @@ export default function EmailInput({ input, meta, placeholder, required }) {
     >
       <input
         {...input}
-        className="p-4 w-full rounded-l"
+        className="p-4 w-full rounded-l text-sm md:text-base"
         type="text"
         placeholder={placeholder}
       />
