@@ -28,7 +28,7 @@
     max-width: 730px;
     margin: 0 auto;
     a {
-      @apply font-medium underline hover:text-lime-dark;
+      @apply font-bold underline hover:text-lime-dark;
     }
     p,
     ul,
