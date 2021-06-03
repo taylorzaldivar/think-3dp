@@ -1,7 +1,7 @@
 import { getAllBlogs, getBlogBySlug } from "../lib/blogs";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
-import { img } from "../utils/imageHelpers";
+import { img, openGraphImage } from "../utils/imageHelpers";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 
@@ -24,10 +24,10 @@ export default function BlogPage({ blog }) {
           title: `${blog.fields.seo.title}`,
           description: `${blog.fields.seo.description}`,
           url: `https://think3dp.com/${blog.fields.slug}`,
-          type: "website",
+          type: "article",
           images: [
             {
-              url: `https://think3dp.com/images/opengraph.jpg`,
+              url: `${openGraphImage(blog.fields.coverImage)}`,
             },
           ],
         }}
